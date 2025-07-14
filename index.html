@@ -2,112 +2,161 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <title>未来智联科技 - 引领数智未来</title>
+  <title>匠心空间装饰 - 专注细节，为业主而生</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    body { font-family: 'Segoe UI', Arial, sans-serif; margin:0; background:#0a192f; color:#fff;}
-    header { background:#112240; padding:30px 0; text-align: center; }
-    nav a { color:#64ffda; text-decoration:none; margin:0 22px; font-size:1.1em; font-weight:bold;}
-    nav a:hover { color:#fff; }
-    .hero { text-align:center; padding:90px 20px 60px 20px; background:linear-gradient(135deg, #112240 60%, #233554 100%);}
-    .hero h1 { font-size:3.2em; margin-bottom:22px; font-weight:900;}
-    .hero p { font-size:1.4em; margin-bottom:32px;}
-    .cta-btn { padding:12px 38px; background:#64ffda; color:#0a192f; border:none; border-radius:6px; font-size:1.2em; cursor:pointer; font-weight:bold;}
-    .products { display:flex; gap:32px; justify-content:center; flex-wrap:wrap; margin:60px 0;}
-    .product-card { background:#233554; padding:30px; border-radius:12px; width:270px; box-shadow:0 2px 14px #0a192f66; text-align:center; }
-    .product-card h3 { color:#64ffda; margin-bottom:16px;}
-    .product-card p { font-size:1.05em;}
-    .features { display:flex; gap:30px; justify-content:center; flex-wrap:wrap; margin:50px 0;}
-    .feature-item { background:#112240; padding:25px; border-radius:10px; width:220px; text-align:center;}
-    .feature-item h4 { color:#64ffda; margin-bottom:10px;}
-    .partners { text-align:center; margin:50px 0;}
-    .partners img { height:38px; margin:0 30px; vertical-align:middle;}
-    .about { background:#233554; padding:38px 20px; border-radius:12px; max-width:900px; margin:50px auto;}
-    .about h2 { color:#64ffda; margin-bottom:16px;}
-    .about p { font-size:1.1em;}
+    body { font-family: 'PingFang SC', 'Segoe UI', Arial, sans-serif; margin:0; background:#f6f6f6; color:#333;}
+    header { background:#17345f; padding:26px 0 18px 0; text-align: center; box-shadow:0 2px 8px #17345f22;}
+    nav a { color:#fff; text-decoration:none; margin:0 30px; font-size:1.15em; font-weight:500; transition:.2s;}
+    nav a:hover { color:#ff9800;}
+    .hero { display:flex; flex-wrap:wrap; align-items:center; justify-content:center; background:linear-gradient(120deg, #17345f 60%, #37609d 100%); padding:60px 0 40px 0;}
+    .hero-img { flex:1 1 320px; text-align:center;}
+    .hero-img img { max-width:380px; border-radius:18px; box-shadow:0 6px 32px #0003;}
+    .hero-content { flex:1 1 360px; color:#fff; padding:0 32px;}
+    .hero-content h1 { font-size:2.9em; font-weight:900; margin-bottom:18px;}
+    .hero-content p { font-size:1.25em; margin-bottom:28px; line-height:1.7;}
+    .cta-btn { padding:13px 46px; background:#ff9800; color:#fff; border:none; border-radius:6px; font-size:1.2em; cursor:pointer; font-weight:bold; box-shadow:0 2px 10px #17345f44;}
+    .section { max-width:1200px; margin:50px auto; background:#fff; border-radius:18px; box-shadow:0 4px 24px #17345f14; padding:32px 24px;}
+    .section h2 { text-align:center; color:#17345f; font-size:2em; font-weight:900; margin-bottom:18px;}
+    .features { display:grid; grid-template-columns:1fr 1fr 1fr; gap:28px; margin:34px 0;}
+    .feature { background:#f3f6fa; border-radius:12px; padding:22px; text-align:center; box-shadow:0 2px 8px #17345f12;}
+    .feature img { height:62px; margin-bottom:12px;}
+    .feature h4 { color:#ff9800; margin-bottom:10px;}
+    .feature p { font-size:1.05em;}
+    .cases { margin:38px 0;}
+    .cases-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(320px,1fr)); gap:32px;}
+    .case-card { background:#fff; border-radius:14px; box-shadow:0 2px 14px #17345f18; padding:14px; overflow:hidden;}
+    .case-card img { width:100%; border-radius:10px; margin-bottom:10px; height:210px; object-fit:cover;}
+    .case-card h5 { font-size:1.18em; color:#17345f; margin-bottom:8px;}
+    .case-card p { font-size:.97em; color:#555;}
+    .service-attitude { background:#ff9800; color:#fff; border-radius:12px; padding:28px; margin:38px 0;}
+    .service-attitude h3 { font-size:1.4em; margin-bottom:14px;}
+    .service-attitude ul { margin:0; padding-left:20px;}
+    .service-attitude li { margin-bottom:8px; line-height:1.7;}
     .contact-form { max-width:420px; margin:40px auto;}
-    .contact-form input, .contact-form textarea { width:100%; margin-bottom:12px; padding:12px; border-radius:7px; border:none; font-size:1em;}
-    .contact-form button { width:100%; padding:12px; background:#64ffda; color:#233554; border:none; border-radius:7px; font-size:1.15em; font-weight:bold;}
-    footer { background:#112240; color:#64ffda; text-align:center; padding:20px 0; margin-top:60px;}
+    .contact-form input, .contact-form textarea { width:100%; margin-bottom:12px; padding:12px; border-radius:7px; border:1px solid #ccc; font-size:1em;}
+    .contact-form button { width:100%; padding:12px; background:#17345f; color:#fff; border:none; border-radius:7px; font-size:1.15em; font-weight:bold;}
+    footer { background:#17345f; color:#fff; text-align:center; padding:20px 0; margin-top:60px;}
+    @media (max-width:900px){
+      .features{grid-template-columns:1fr 1fr;}
+    }
+    @media (max-width:600px){
+      .features{grid-template-columns:1fr;}
+      .hero{flex-direction:column;}
+      .hero-content{padding:0 10px;}
+      .section{padding:18px 5px;}
+      .cases-grid{grid-template-columns:1fr;}
+    }
   </style>
 </head>
 <body>
   <header>
     <nav>
       <a href="#">首页</a>
-      <a href="#">产品</a>
-      <a href="#">技术优势</a>
-      <a href="#">合作伙伴</a>
-      <a href="#">关于我们</a>
-      <a href="#">联系我们</a>
+      <a href="#features">装修细节</a>
+      <a href="#cases">装修案例</a>
+      <a href="#service">服务态度</a>
+      <a href="#about">关于我们</a>
+      <a href="#contact">联系我们</a>
     </nav>
   </header>
   <section class="hero">
-    <h1>未来智联科技</h1>
-    <p>以人工智能与云计算为引擎，让世界互联更智能。<br>我们用代码连接未来，用创新驱动成长。</p>
-    <button class="cta-btn">立即体验未来科技</button>
-  </section>
-  <section>
-    <h2 style="text-align:center; color:#64ffda;">核心产品</h2>
-    <div class="products">
-      <div class="product-card">
-        <h3>AI语音助手</h3>
-        <p>全天候智能对话，支持多语种，助力企业自动化办公。</p>
-      </div>
-      <div class="product-card">
-        <h3>量子云平台</h3>
-        <p>极致计算性能，灵活扩展，安全可靠，支持多行业解决方案。</p>
-      </div>
-      <div class="product-card">
-        <h3>智能物联网管控</h3>
-        <p>一站式设备接入与管理，实时数据分析，助力智慧城市建设。</p>
-      </div>
+    <div class="hero-img">
+      <img src="https://img.zcool.cn/community/01b3cf5b8c2e50a801219c77fd0bd1.jpg@1280w_1l_2o_100sh.jpg" alt="精美客厅装修效果图">
+    </div>
+    <div class="hero-content">
+      <h1>匠心空间装饰</h1>
+      <p>专注每一寸空间，追求每一个细节。我们深知装修是一场关于家的梦想旅程，始终以业主为中心，提供贴心、全程无忧服务。</p>
+      <button class="cta-btn">预约免费设计方案</button>
     </div>
   </section>
-  <section>
-    <h2 style="text-align:center; color:#64ffda;">技术优势</h2>
+  <section class="section" id="features">
+    <h2>装修细节展示</h2>
     <div class="features">
-      <div class="feature-item">
-        <h4>AI深度学习</h4>
-        <p>自主研发神经网络引擎，精准高效，持续自我进化。</p>
+      <div class="feature">
+        <img src="https://cdn-icons-png.flaticon.com/512/846/846449.png" alt="水电细节">
+        <h4>水电工艺规范</h4>
+        <p>采用国际标准施工，隐蔽工程全程可视化，保障用电用水安全、布局合理。</p>
       </div>
-      <div class="feature-item">
-        <h4>云安全防护</h4>
-        <p>多重加密机制与智能防御，保障企业数据安全无忧。</p>
+      <div class="feature">
+        <img src="https://cdn-icons-png.flaticon.com/512/168/168760.png" alt="环保材料">
+        <h4>环保材料甄选</h4>
+        <p>优选一线品牌，绿色环保无异味，守护家人健康，从源头把控质量。</p>
       </div>
-      <div class="feature-item">
-        <h4>极速响应</h4>
-        <p>高并发架构设计，毫秒级业务响应，助力高效运营。</p>
-      </div>
-      <div class="feature-item">
-        <h4>定制化服务</h4>
-        <p>根据行业需求深度定制，满足企业个性化发展。</p>
+      <div class="feature">
+        <img src="https://cdn-icons-png.flaticon.com/512/1829/1829582.png" alt="收纳设计">
+        <h4>人性化收纳设计</h4>
+        <p>根据业主生活习惯量身定制收纳空间，兼顾美观与实用性，让空间更有序。</p>
       </div>
     </div>
   </section>
-  <section class="partners">
-    <h2 style="color:#64ffda;">合作伙伴</h2>
-    <img src="https://dummyimage.com/120x38/64ffda/fff&text=腾讯" alt="腾讯">
-    <img src="https://dummyimage.com/120x38/64ffda/fff&text=阿里云" alt="阿里云">
-    <img src="https://dummyimage.com/120x38/64ffda/fff&text=华为" alt="华为">
-    <img src="https://dummyimage.com/120x38/64ffda/fff&text=微软" alt="微软">
+  <section class="section cases" id="cases">
+    <h2>全屋装修案例</h2>
+    <div class="cases-grid">
+      <div class="case-card">
+        <img src="https://img1.jiwu.com/attach/news/2020/02/19/3b0d6e51-4e4d-4b8f-9d7b-8d4c711f7a8c.jpg" alt="现代简约风格">
+        <h5>现代简约三居室</h5>
+        <p>白色主调，空间通透，适合年轻业主。开放式厨房与客厅连接，凸显时尚与实用。</p>
+      </div>
+      <div class="case-card">
+        <img src="https://www.kujiale.com/attachment/202001/20/9a3fe8a4b7b44a8c8ebd5a4d4e3b2b60.jpg" alt="北欧风格">
+        <h5>北欧风温馨小户型</h5>
+        <p>原木与灰色结合，极简温馨。阳台休闲区与书房巧妙结合，提升空间利用率。</p>
+      </div>
+      <div class="case-card">
+        <img src="https://img.zcool.cn/community/0157f55d8e3f6fa801219c77fbbffb.jpg@1280w_1l_2o_100sh.jpg" alt="轻奢装修风格">
+        <h5>轻奢质感大平层</h5>
+        <p>金属、皮革元素点缀，空间高端大气，适合追求品质生活的业主。</p>
+      </div>
+      <div class="case-card">
+        <img src="https://img1.tuhu.cn/images/2021-05-17/a2b49e4e-fcba-4cbb-9a79-fb1d6b2e5f7c.jpg" alt="儿童房设计">
+        <h5>儿童房创意设计</h5>
+        <p>安全环保，色彩丰富，搭配收纳与成长空间，激发孩子想象力。</p>
+      </div>
+      <div class="case-card">
+        <img src="https://img.zcool.cn/community/0158e35c8e2d0fa801219c77ea7e02.jpg@1280w_1l_2o_100sh.jpg" alt="中式家装">
+        <h5>新中式雅致之家</h5>
+        <p>沉稳木色与山水元素融合，传承经典，彰显主人品味。</p>
+      </div>
+      <div class="case-card">
+        <img src="https://img0.baidu.com/it/u=4127283376,2222252763&fm=253&fmt=auto&app=138&f=JPEG?w=640&h=426" alt="极简风格">
+        <h5>极简风公寓</h5>
+        <p>黑白灰色系，极致简约，空间留白让生活回归本真。</p>
+      </div>
+    </div>
   </section>
-  <section class="about">
-    <h2>关于我们</h2>
-    <p>未来智联科技成立于2025年，是全球领先的高新技术企业。我们的团队由人工智能、云计算、物联网、量子信息等领域的顶尖专家组成。我们致力于打造开放、智能、安全、可持续的数智生态，赋能各行各业迈向数字化新时代。</p>
+  <section class="section service-attitude" id="service">
+    <h3>业主至上的服务态度</h3>
+    <ul>
+      <li>每一步施工细节都与业主充分沟通，定期汇报进度。</li>
+      <li>专属设计师一对一服务，随时响应业主需求和建议。</li>
+      <li>免费上门量房，个性化定制设计方案。</li>
+      <li>工程管家全程监管，确保施工过程透明、安全、无忧。</li>
+      <li>完工后7×24小时售后支持，急速响应业主反馈。</li>
+    </ul>
   </section>
-  <section>
-    <h2 style="text-align:center; color:#64ffda;">联系我们</h2>
+  <section class="section" id="about">
+    <h2>关于匠心空间装饰</h2>
+    <p>
+      匠心空间装饰成立于2013年，专注于家装、别墅、商用空间设计与施工。我们拥有资深设计团队与专业施工班组，秉持“细节决定品质，服务赢得口碑”的理念，累计服务业主超2000户。无论是现代、北欧、轻奢还是中式，我们都能为您打造理想之家。
+    </p>
+  </section>
+  <section class="section" id="contact">
+    <h2>联系我们</h2>
     <form class="contact-form">
       <input type="text" placeholder="您的姓名" required>
-      <input type="email" placeholder="邮箱" required>
-      <textarea placeholder="您的留言" rows="4" required></textarea>
+      <input type="tel" placeholder="联系电话" required>
+      <input type="email" placeholder="邮箱（选填）">
+      <textarea placeholder="您的装修需求" rows="4" required></textarea>
       <button type="submit">提交信息</button>
     </form>
   </section>
   <footer>
-    &copy; 2025 未来智联科技 | 创新 · 智能 · 连接<br>
-    关注我们：<a href="#" style="color:#fff">微博</a> | <a href="#" style="color:#fff">微信公众号</a> | <a href="#" style="color:#fff">LinkedIn</a>
+    &copy; 2025 匠心空间装饰 | 精工细作 · 业主至上<br>
+    关注我们：
+    <a href="#" style="color:#ff9800; text-decoration:underline;">微博</a> |
+    <a href="#" style="color:#ff9800; text-decoration:underline;">微信公众号</a> |
+    <a href="#" style="color:#ff9800; text-decoration:underline;">抖音</a>
   </footer>
 </body>
 </html>
